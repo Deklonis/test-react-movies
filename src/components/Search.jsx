@@ -13,6 +13,10 @@ class Search extends React.Component {
         })
     }
 
+    clearSearch = () => {
+        this.setState({search: ''})
+    }
+
     render() {
         return <div>
             <div className="row">
@@ -24,6 +28,7 @@ class Search extends React.Component {
             value={this.state.search}
             onChange={(event)=>this.setState({search: event.target.value})}
             />
+            <button onClick={this.clearSearch}>Очистить</button>
             <button className="btn search-btn" onClick={() => this.props.searchMovies(this.state.search, this.state.mtype)}>Search</button>
             </div>
             <div className="radiobut">

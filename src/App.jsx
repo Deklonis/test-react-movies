@@ -25,10 +25,11 @@ export default class App extends React.Component {
     
   }
   componentDidMount() {
-    fetch(`https://www.omdbapi.com/?&s=matrix&apikey=${API_KEY}`)
+    fetch(`https://www.omdbapi.com/?&s=all&apikey=${API_KEY}`)
     .then(response => response.json())
     .then(data => this.setState({movies: data.Search, loading: false}, () => {console.log(this.state.movies)}))
   }
+
   
   render() {
     return <main className="content">
